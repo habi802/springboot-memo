@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 인터페이스 + xml >> 객체화 -->
+<mapper namespace="com.green.firstserver.MemoMapper">
+    <!-- id는 인터페이스의 메소드명과 연결 -->
+    <insert id="insMemo">
+        INSERT INTO memo
+        SET title = #{title},
+            content = #{content}
+    </insert>
+
+    <select id="selMemoList">
+        SELECT id, title, content
+        FROM memo
+        ORDER BY id DESC;
+    </select>
+
+    <select id="selMemo">
+        SELECT title, content, created_at AS createdAt
+        FROM memo
+        WHERE id = #{id}
+    </select>
+</mapper>

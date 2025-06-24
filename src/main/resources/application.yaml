@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: FirstServer
+  datasource:
+    url: jdbc:mariadb://localhost/memo
+    username: root
+    password: green502
+
+mybatis:
+  mapper-locations: mappers/**/*.xml
